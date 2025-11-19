@@ -3,7 +3,7 @@
 **Authors:** Rohit Mukherjee, T.C. Chakraborty
 
 ## Overview
-This repository contains the Google Earth Engine and python code for the study **"Global urban-rural contrasts in vegetation amount, subtype, and structure modulated by background climate and socioeconomic conditions"**.
+This repository contains the Google Earth Engine (GEE) and python code for the study **"Global urban-rural contrasts in vegetation amount, subtype, and structure modulated by background climate and socioeconomic conditions"**.
 
 ### Paper Summary
 This study presents a global assessment of vegetation characteristics across **83,102 urban clusters**. By moving beyond traditional spectral proxies (like NDVI), this analysis isolates specific structural and functional differences—specifically **Leaf Area Index (LAI)** and **Tree Height**—between urban areas and their immediate rural surroundings.
@@ -16,9 +16,9 @@ This study presents a global assessment of vegetation characteristics across **8
 ---
 
 ## Methodology & Calculations
-This codebase utilizes **Google Earth Engine** to perform multi-scalar geospatial analyses. The core calculations include:
+This codebase utilizes GEE to generate datasets, and python to process these datasets, analyze, and plot. The primary parameters analyzed include:
 
-### 1. Vegetation Composition
+### 1. Vegetation and subtype composition
 Calculates the area-weighted mean ($\mu_{w}$) fractional cover for specific vegetation subtypes using **ESA WorldCover 2020** (10m resolution):
 * Tree Cover
 * Grassland
@@ -27,11 +27,11 @@ Calculates the area-weighted mean ($\mu_{w}$) fractional cover for specific vege
 * all Vegetation (including Mangrove, Moss and lichen)
 * NDVI, EVI
 
-### 2. Vegetation Structure
+### 2. Vegetation structure
 * **Leaf Area Index (LAI):** Derived from **Sentinel-2** imagery (2020) using a hybrid machine learning and radiative transfer model to estimate one-sided green leaf area per unit ground surface.
 * **Canopy Height:** Extracted from the **Meta Canopy Height** dataset (1m resolution), masked to strictly include pixels classified as trees.
 
-### 3. Spatiotemporal Stratification
+### 3. Temporal Analysis
 * **Temporal Trends (1990–2020):** Uses **Landsat-based Global Land Cover** products to track 30-year shifts in vegetation composition.
 * **Classification:** Stratifies results by **Global North/South** (World Bank income groups) and **Köppen-Geiger** climate zones.
 
