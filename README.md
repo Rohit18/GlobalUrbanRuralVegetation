@@ -40,4 +40,4 @@ Calculates the area-weighted mean ($\mu_{w}$) fractional cover for specific vege
 ## Data Sources
 * **Land Cover:** ESA WorldCover 2020, ESA CCI Land Cover, Landsat-based Global Land Cover (GLC_FCS30D).
 * **Canopy Height:** Meta Canopy Height (1m resolution).
-* **Optical Imagery:** Sentinel-2 (for LAI generation), Landsat (for long-term analysis).S
+* **Optical Imagery:** Sentinel-2 (for LAI generation), Landsat (for long-term analysis).
