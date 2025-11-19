@@ -10,7 +10,7 @@ This study presents a global assessment of vegetation characteristics across **8
 
 **Key Insights:**
 * **Structural Loss:** While urban areas generally have less vegetation, the loss of vertical structure (height and density) is often more pronounced than the loss of greenness coverage.
-* **Socioeconomic Modulation:** Cities in the **Global North** exhibit larger urban-rural structural contrasts (e.g., taller rural trees compared to urban ones) than the **Global South**, despite the North having higher urban tree fractions overall.
+* **Socioeconomic conditions:** Cities in the **Global North** exhibit larger urban-rural structural contrasts (e.g., taller rural trees compared to urban ones) than the **Global South**, despite the North having higher urban tree fractions overall.
 * **Climate Context:** Arid cities show the least structural difference between urban and rural areas (often due to the "oasis effect"), whereas Continental and Temperate cities show the largest structural deficits.
 
 ---
