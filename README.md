@@ -1,184 +1,46 @@
-# GlobalUrbanRuralVegetation
-Global urban rural vegetation analysis including leaf area index and tree height
+# Global Urban-Rural Vegetation Contrasts
 
+**Authors:** Rohit Mukherjee, T.C. Chakraborty
 
-# GlobalUrbanRuralVegetation
+## Overview
+This repository contains the analytical framework and code for the study **"Global urban-rural contrasts in vegetation amount, subtype, and structure modulated by background climate and socioeconomic conditions"**.
 
-A computational workflow for global urban–rural vegetation analysis, quantifying vegetation cover, canopy structure, and biophysical metrics across **83,000+ cities** worldwide. The repository contains reproducible scripts and notebooks for:
+### Paper Summary
+This study presents a global assessment of vegetation characteristics across **83,102 urban clusters**. By moving beyond traditional spectral proxies (like NDVI), this analysis isolates specific structural and functional differences—specifically **Leaf Area Index (LAI)** and **Canopy Height**—between urban areas and their immediate rural surroundings.
 
-- Vegetation fractions (total + subtypes)
-- Leaf Area Index (LAI; total + subtype-specific)
-- Tree height
-- Urban–rural difference metrics (Δ, Δw)
-- Weighted statistics (Kish effective sample size)
-- Climate stratification (Köppen A/B/C/D)
-- Global North vs Global South cohorts
-- Country-level aggregations
-- Cartographic visualization (choropleths, scatter maps, histograms, stacked % bars)
-
-The project integrates **Python**, **GeoPandas**, **NumPy/Pandas**, **Cartopy**, and **Google Earth Engine**, producing publication-ready figures for high-impact journal submissions.
+**Key Insights:**
+* **Structural Loss:** While urban areas generally have less vegetation, the loss of vertical structure (height and density) is often more pronounced than the loss of greenness coverage.
+* **Socioeconomic Modulation:** Cities in the **Global North** exhibit larger urban-rural structural contrasts (e.g., taller rural trees compared to urban ones) than the **Global South**, despite the North having higher urban tree fractions overall.
+* **Climate Context:** Arid cities show the least structural difference between urban and rural areas (often due to the "oasis effect"), whereas Continental and Temperate cities show the largest structural deficits.
 
 ---
 
-## 🗂 Repository Structure
+## Methodology & Calculations
+This codebase utilizes **Google Earth Engine** to perform multi-scalar geospatial analyses. The core calculations include:
 
-```
-GlobalUrbanRuralVegetation/
-│
-├── notebooks/
-│   ├── UFD_finalFigures.ipynb
-│   ├── LAI_processing.ipynb
-│   ├── vegetation_fraction_climate.ipynb
-│   ├── vegetation_subtypes_climate.ipynb
-│   ├── flood_and_rural_mask_checks.ipynb
-│   └── misc_data_checks.ipynb
-│
-├── scripts/
-│   ├── compute_LAI_summary.py
-│   ├── compute_tree_height_summary.py
-│   ├── compute_vegetation_summary.py
-│   ├── vegetation_subtypes_summary.py
-│   ├── country_map_LAI.py
-│   ├── country_map_tree_height.py
-│   ├── country_map_veg_fraction.py
-│   ├── scatter_map_tree_height.py
-│   └── utils_stats.py
-│
-├── data/
-│   ├── combinedFeatures_VegBiomeKoppen_*.csv
-│   ├── combinedFeatures_TreesBiomeKoppen_*.csv
-│   └── LAI/TreeHeight auxiliary layers
-│
-├── figures/
-│
-└── README.md
-```
+### 1. Urban-Rural Delineation
+* **Urban Clusters:** Defined using **ESA CCI Land Cover (2018)** built-up classes. Clusters are vectorized and filtered for a minimum area of **1 km²**.
+* **Rural Reference Buffers:** Constructed using an iterative buffering algorithm (up to 10km) to identify a surrounding rural ring that matches the area of the urban cluster.
+
+### 2. Vegetation Composition (2D)
+Calculates the area-weighted mean ($\mu_{w}$) fractional cover for specific vegetation subtypes using **ESA WorldCover 2020** (10m resolution):
+* Tree Cover
+* Grassland
+* Cropland
+* Shrubland
+
+### 3. Vegetation Structure (3D)
+* **Leaf Area Index (LAI):** Derived from **Sentinel-2** imagery (2020) using a hybrid machine learning and radiative transfer model to estimate one-sided green leaf area per unit ground surface.
+* **Canopy Height:** Extracted from the **Meta Canopy Height** dataset (1m resolution), masked to strictly include pixels classified as trees.
+* **Urban-Rural Difference ($\Delta$):** Computed as $Urban_{value} - Rural_{value}$ for all metrics to quantify the biophysical impact of urbanization.
+
+### 4. Spatiotemporal Stratification
+* **Temporal Trends (1990–2020):** Uses **Landsat-based Global Land Cover** products to track 30-year shifts in vegetation composition.
+* **Classification:** Stratifies results by **Global North/South** (World Bank income groups) and **Köppen-Geiger** climate zones.
 
 ---
 
-## 🔍 Core Analyses
-
-### 1. Urban–Rural Vegetation Fractions
-Scripts compute:
-- Fractional vegetation cover (urban & rural)
-- Subtype fractions (tree, grassland, shrubland, cropland)
-- Paired differences:
-  ```
-  Δ  = mean(urban − rural)
-  Δw = weighted mean difference (Urban_Area + Buffer_area)
-  ```
-
-### 2. Leaf Area Index (LAI)
-- LAI rescaled (÷10) as needed
-- Total & subtype LAI
-- Weighted means using **Kish n_eff**
-- Paired effect sizes (Cohen’s d, rank-biserial r, U>R metrics)
-
-### 3. Tree Height
-- Height normalized by **tree cover area**
-- Urban–rural paired differences
-- Weighted effect sizes
-- Scatter maps and climate-wise breakdowns
-
-### 4. Climate Stratification
-Climate class based on first letter of `koppen_name_urban`:
-- A = Tropical  
-- B = Arid  
-- C = Temperate  
-- D = Continental
-
-Outputs generated for:
-- All cities  
-- Top 1,000 by Urban_Area  
-- Each climate class × metric
-
-### 5. Cartography & Figures
-Scripts generate publication-grade maps:
-- Symmetric diverging palettes centered on **0**
-- Discrete bins (8–10 classes)
-- Minimalist histograms matched to map bins
-- Stacked percentage bars (U<R / U==R / U>R)
-
-Figures exported as vector **PDF**.
-
----
-
-## 📦 Data Inputs
-
-Most inputs originate from **Google Earth Engine exports**, including:
-- LAI and tree-height mosaics  
-- `globalUrban2018WithAreaIndex`, `globalRural2018merged`
-- Biome layers and Köppen climate classification  
-- Auxiliary rasters: DynamicWorld, ESA WorldCover, etc.
-
-Local CSVs generally follow:
-
-```
-combinedFeatures_*_withLatLon_with_countries.csv
-```
-
-Each row contains:
-- Urban & Rural areas
-- Vegetation/LAI/height values
-- Lat/lon for mapping
-- Climate class
-- Biome
-- Global North/South indicator
-
----
-
-## 🧮 Statistical Framework
-
-### Weighted Means
-```
-μw = Σ(w_i * x_i) / Σ w_i
-```
-
-### Kish Effective Sample Size
-```
-n_eff = (Σ w_i)^2 / Σ(w_i^2)
-SEw = sd_w / sqrt(n_eff)
-```
-
-### Effect Sizes
-- Cohen’s d / Hedges g  
-- Rank-biserial correlation  
-- Percentages for U>R, U<R, U==R
-
-**All map and table scripts use a unified, consistent weighting framework.**
-
----
-
-## ▶️ How to Run
-
-Example (LAI summary):
-
-```bash
-python scripts/compute_LAI_summary.py \
-    --csv data/combinedFeatures_LAI.csv \
-    --out results/summary_LAI.csv
-```
-
-Example (country map):
-
-```bash
-python scripts/country_map_LAI.py \
-    --csv data/combinedFeatures_LAI.csv \
-    --out_map figures/LAI_map.pdf \
-    --out_hist figures/LAI_hist.pdf
-```
-
-The notebooks in `/notebooks` reproduce the full workflow end-to-end.
-
----
-
-## 📝 Reproducibility & Archiving
-
-This repository contains **data-processing code only**.  
-For publication, you can archive a tagged release using **Zenodo**, which will automatically generate a DOI.
-
----
-
-## 📄 License
-
-MIT License (update if needed).
+## Data Sources
+* **Land Cover:** ESA WorldCover 2020, ESA CCI Land Cover.
+* **Canopy Height:** Meta Canopy Height (1m resolution).
+* **Optical Imagery:** Sentinel-2 (for LAI generation), Landsat (for long-term analysis).
