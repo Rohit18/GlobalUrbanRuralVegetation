@@ -1,6 +1,6 @@
 # Global urban-rural vegetation contrasts
 
-**Authors:** Rohit Mukherjee, T.C. Chakraborty
+**Authors:** Rohit Mukherjee, TC Chakraborty
 
 ## Overview
 This repository contains the Google Earth Engine (GEE) and python code for the study **"Global urban-rural contrasts in vegetation amount, subtype, and structure modulated by background climate and socioeconomic conditions"**.
