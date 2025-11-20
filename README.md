@@ -48,6 +48,7 @@ The processed datasets are published on Zenodo (DOI: 10.5281/zenodo.17644251).
 _EVI_
 * `urbanRural_EVIBiomeKoppen_withLatLon_with_countries_global_ns.csv`
 * `urbanRural_EVIBiomeKoppen_withLatLon_with_countries.csv`
+
 _Country-level temporal EVI change between 1990 and 2020_
 * `urbanEVI_1990_perCountry.csv`
 * `urbanEVI_2020_perCountry.csv`
@@ -55,6 +56,7 @@ _Country-level temporal EVI change between 1990 and 2020_
 _NDVI_
 * `urbanRural_NDVIBiomeKoppen_withLatLon_with_countries_global_ns.csv`
 * `urbanRural_NDVIBiomeKoppen_withLatLon_with_countries.csv`
+
 _Country-level temporal NDVI change between 1990 and 2020_
 * `urbanNDVI_1990_perCountry.csv`
 * `urbanNDVI_2020_perCountry.csv`
@@ -63,6 +65,7 @@ _Country-level temporal NDVI change between 1990 and 2020_
 _Vegetation_
 * `vegUrban_1990_2020_constBuiltUp2020_100m.csv`
 * `vegUrban_1990_2020_constBuiltUp1992_100m.csv`
+
 _Tree_
 * `treeUrban_1990_2020_constBuiltUp2020_100m.csv`
 * `treeUrban_1990_2020_constBuiltUp1992_100m.csv`
