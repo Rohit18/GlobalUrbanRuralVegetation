@@ -45,30 +45,47 @@ The processed datasets are published on Zenodo (DOI: 10.5281/zenodo.17644251).
 * `urbanRural_TreesBiomeKoppen_withLatLon_with_countries.csv`
 
 ### Vegetation Indices (NDVI & EVI)
+_EVI_
 * `urbanRural_EVIBiomeKoppen_withLatLon_with_countries_global_ns.csv`
 * `urbanRural_EVIBiomeKoppen_withLatLon_with_countries.csv`
+_Country-level temporal EVI change between 1990 and 2020_
+* `urbanEVI_1990_perCountry.csv`
+* `urbanEVI_2020_perCountry.csv`
+
+_NDVI_
 * `urbanRural_NDVIBiomeKoppen_withLatLon_with_countries_global_ns.csv`
 * `urbanRural_NDVIBiomeKoppen_withLatLon_with_countries.csv`
+_Country-level temporal NDVI change between 1990 and 2020_
+* `urbanNDVI_1990_perCountry.csv`
+* `urbanNDVI_2020_perCountry.csv`
 
-### Temporal Analysis: Fixed Extents (1990 & 2020)
+### Country-level temporal analysis: fixed urban extents (1990 & 2020)
+_Vegetation_
 * `vegUrban_1990_2020_constBuiltUp2020_100m.csv`
 * `vegUrban_1990_2020_constBuiltUp1992_100m.csv`
+_Tree_
 * `treeUrban_1990_2020_constBuiltUp2020_100m.csv`
 * `treeUrban_1990_2020_constBuiltUp1992_100m.csv`
 
-### Temporal Change: Subtypes (1990 vs 2020)
+### Temporal change (1990 vs 2020)
+_Vegetation_
 * `vegUrban_2020_constBuiltUp2020_100m.csv`
 * `vegUrban_1990_constBuiltUp1992_100m.csv`
+_Tree_
 * `treeUrban_2020_constBuiltUp2020_100m.csv`
 * `treeUrban_1990_constBuiltUp1992_100m.csv`
+_Crop_
 * `croplandUrban_1990_constBuiltUp1990_100m.csv`
 * `croplandUrban_2020_constBuiltUp2020_100m.csv`
+_Grass_
 * `grassUrban_1990_constBuiltUp1990_100m.csv`
 * `grassUrban_2020_constBuiltUp2020_100m.csv`
+_Shrub_
 * `shrubUrban_1990_constBuiltUp1990_100m.csv`
 * `shrubUrban_2020_constBuiltUp2020_100m.csv`
 
-### Temporal Change: 5-Year Increments
+### Temporal change: 5-Year increments
+_Vegetation_
 * `vegUrban1990.csv`
 * `vegUrban1995.csv`
 * `vegUrban2000.csv`
@@ -76,6 +93,8 @@ The processed datasets are published on Zenodo (DOI: 10.5281/zenodo.17644251).
 * `vegUrban2010.csv`
 * `vegUrban2015.csv`
 * `vegUrban2020.csv`
+
+_Tree_
 * `treeUrban1990.csv`
 * `treeUrban1995.csv`
 * `treeUrban2000.csv`
@@ -84,14 +103,14 @@ The processed datasets are published on Zenodo (DOI: 10.5281/zenodo.17644251).
 * `treeUrban2015.csv`
 * `treeUrban2020.csv`
 
-### Climate Zone Analysis
-**Vegetation**
+### Climate zone analysis
+_Vegetation_
 * `urbanVegetationClimate_1990_2020_tropical.csv`
 * `urbanVegetationClimate_1992_2020_arid.csv`
 * `urbanVegetationClimate_1990_2020_continental.csv`
 * `urbanVegetationClimate_1990_2020_temperate_100m.csv`
 
-**Tree Cover**
+_Tree_
 * `urbanTreeCover_1992_2020_tropical.csv`
 * `urbanTreeCover_1992_2020_continental.csv`
 * `urbanTreeCover_1992_2020_arid.csv`
