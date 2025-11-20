@@ -37,7 +37,7 @@ The processed datasets are published on Zenodo (DOI: 10.5281/zenodo.17644251).
 * `urbanRuralLAI_with_countries_veg.csv`
 * `urbanRuralLAI_with_countries_global_ns_veg.csv`
 
-### Tree Height
+### Tree Height (Meta Canopy Height)
 * `urbanRural_TreesBiomeKoppen_withLatLon_with_countries.csv`
 
 ### Vegetation Indices (NDVI & EVI)
