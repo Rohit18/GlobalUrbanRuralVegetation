@@ -39,6 +39,35 @@ Calculates the area-weighted mean ($\mu_{w}$) fractional cover for specific vege
 
 ---
 
+#### Vegetation Cover (ESA WorldCover 2020)
+| Description | Filename |
+| :--- | :--- |
+| **Global Veg Cover** | `urbanRural_VegBiomeKoppen_withLatLon_with_countries.csv` |
+| **Global North/South Split** | `urbanRural_VegBiomeKoppen_withLatLon_with_countries_global_ns.csv` |
+
+#### Temporal Analysis (Fixed Extents)
+| Period | Description | Filenames |
+| :--- | :--- | :--- |
+| **5-Year Intervals** | Vegetation & Tree trends | `vegUrban_1990_2020_constBuiltUp2020_100m.csv`<br>`vegUrban_1990_2020_constBuiltUp1992_100m.csv`<br>`treeUrban_1990_2020_constBuiltUp2020_100m.csv`<br>`treeUrban_1990_2020_constBuiltUp1992_100m.csv` |
+| **1990 vs 2020** | Change per subtype | `vegUrban_2020_constBuiltUp2020_100m.csv`<br>`vegUrban_1990_constBuiltUp1992_100m.csv`<br>`treeUrban_2020_constBuiltUp2020_100m.csv`<br>`treeUrban_1990_constBuiltUp1992_100m.csv`<br>`croplandUrban_[YEAR]_constBuiltUp[YEAR]_100m.csv`<br>`grassUrban_[YEAR]_constBuiltUp[YEAR]_100m.csv`<br>`shrubUrban_[YEAR]_constBuiltUp[YEAR]_100m.csv` |
+| **5-Year % Change** | Incremental change files | `vegUrban[YEAR].csv` (1990-2020)<br>`treeUrban[YEAR].csv` (1990-2020) |
+
+#### Structural Metrics
+| Metric | Filenames |
+| :--- | :--- |
+| **Leaf Area Index (LAI)** | `urbanRuralLAI_with_countries_veg.csv`<br>`urbanRuralLAI_with_countries_global_ns_veg.csv` |
+| **Tree Height** | `urbanRural_TreesBiomeKoppen_withLatLon_with_countries.csv` |
+| **EVI** | `urbanRural_EVIBiomeKoppen_withLatLon_with_countries_global_ns.csv`<br>`urbanRural_EVIBiomeKoppen_withLatLon_with_countries.csv` |
+| **NDVI** | `urbanRural_NDVIBiomeKoppen_withLatLon_with_countries_global_ns.csv`<br>`urbanRural_NDVIBiomeKoppen_withLatLon_with_countries.csv` |
+
+#### Climate Zone Breakdowns
+| Category | Filenames |
+| :--- | :--- |
+| **Vegetation** | `urbanVegetationClimate_1990_2020_tropical.csv`<br>`urbanVegetationClimate_1992_2020_arid.csv`<br>`urbanVegetationClimate_1990_2020_continental.csv`<br>`urbanVegetationClimate_1990_2020_temperate_100m.csv` |
+| **Tree Cover** | `urbanTreeCover_1992_2020_tropical.csv`<br>`urbanTreeCover_1992_2020_continental.csv`<br>`urbanTreeCover_1992_2020_arid.csv`<br>`urbanTreeCover_1992_2020_temperate.csv` |
+
+---
+
 ## Data sources
 * **Land cover:** ESA WorldCover 2020, ESA CCI Land Cover, Landsat-based Global Land Cover (GLC_FCS30D).
 * **Canopy height:** Meta Canopy Height (1m resolution).
