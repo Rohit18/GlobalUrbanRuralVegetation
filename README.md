@@ -19,32 +19,32 @@ This study presents a global assessment of vegetation characteristics across **8
 
 ---
 
-## Analysis Parameters
+## Primary analysis
 This codebase uses GEE to generate datasets and Python for analysis.
 
-**1. Vegetation Composition:** Calculated using ESA WorldCover 2020 (10m) for Tree Cover, Grassland, Cropland, Shrubland, and Total Vegetation.
+**1. Vegetation subtype composition:** Calculated using ESA WorldCover 2020 (10m) for Tree Cover, Grassland, Cropland, Shrubland, and Total Vegetation.
 
-**2. Vegetation Structure:** Analysis of Leaf Area Index (LAI) from Sentinel-2 and Canopy Height from Meta Canopy Height (1m).
+**2. Vegetation structure:** Analysis of Leaf Area Index (LAI) from Sentinel-2 and Canopy Height from Meta Canopy Height (1m).
 
-**3. Temporal Analysis:** Tracking 30-year shifts (1990–2020) using Landsat-based Global Land Cover.
+**3. Temporal analysis:** Tracking 30-year shifts (1990–2020) using Landsat-based Global Land Cover.
 
 ---
 
-## Dataset Files
+## Dataset files
 The processed datasets are published on Zenodo (DOI: 10.5281/zenodo.17644251).
 
-### Vegetation Cover (ESA WorldCover)
+### Vegetation cover (ESA WorldCover)
 * `urbanRural_VegBiomeKoppen_withLatLon_with_countries.csv`
 * `urbanRural_VegBiomeKoppen_withLatLon_with_countries_global_ns.csv`
 
-### Leaf Area Index (LAI)
+### Leaf area index (LAI)
 * `urbanRuralLAI_with_countries_veg.csv`
 * `urbanRuralLAI_with_countries_global_ns_veg.csv`
 
-### Tree Height (Meta Canopy Height)
+### Tree height (Meta canopy height)
 * `urbanRural_TreesBiomeKoppen_withLatLon_with_countries.csv`
 
-### Vegetation Indices (NDVI & EVI)
+### Vegetation indices (NDVI & EVI)
 _EVI_
 * `urbanRural_EVIBiomeKoppen_withLatLon_with_countries_global_ns.csv`
 * `urbanRural_EVIBiomeKoppen_withLatLon_with_countries.csv`
