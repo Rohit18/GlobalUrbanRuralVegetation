@@ -1,4 +1,4 @@
-# Global Urban-Rural Vegetation Contrasts
+# Global urban-rural vegetation contrasts
 
 **Authors:** Rohit Mukherjee, T.C. Chakraborty
 
@@ -9,13 +9,13 @@
 ## Overview
 This repository contains the Google Earth Engine (GEE) and Python code for the study **"Global urban-rural contrasts in vegetation amount, subtype, and structure modulated by background climate and socioeconomic conditions"**.
 
-### Paper Summary
-This study presents a global assessment of vegetation characteristics across **83,102 urban clusters**. By moving beyond traditional spectral proxies (like NDVI), this analysis isolates specific structural and functional differences—specifically **Leaf Area Index (LAI)** and **Tree Height**—between urban areas and their immediate rural surroundings.
+### Paper summary
+This study presents a global assessment of vegetation characteristics across **83,102 urban clusters**. By moving beyond traditional spectral proxies (like NDVI, EVI), this analysis isolates specific structural and functional differences, specifically **Leaf Area Index (LAI)** and **Tree Height**, between urban areas and their immediate rural surroundings.
 
-**Key Insights:**
-* **Structural Loss:** While urban areas generally have less vegetation, the loss of vertical structure (height and density) is often more pronounced than the loss of greenness coverage.
-* **Socioeconomic Conditions:** Cities in the **Global North** exhibit larger urban-rural structural contrasts (e.g., taller rural trees compared to urban ones) than the **Global South**, despite the North having higher urban tree fractions overall.
-* **Climate Context:** Arid cities show the least structural difference between urban and rural areas, whereas Continental and Temperate cities show the largest structural deficits.
+**Key insights:**
+* **Structural loss:** While urban areas generally have less vegetation, the loss of vertical structure (height and density) is often more pronounced than the loss of greenness coverage.
+* **Socioeconomic conditions:** Cities in the **Global North** exhibit larger urban-rural structural contrasts (e.g., taller rural trees compared to urban ones) than the **Global South**, despite the North having higher urban tree fractions overall.
+* **Climate context:** Arid cities show the least structural difference between urban and rural areas, whereas Continental and Temperate cities show the largest structural deficits.
 
 ---
 
