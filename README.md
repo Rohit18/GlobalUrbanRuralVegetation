@@ -21,8 +21,11 @@ This study presents a global assessment of vegetation characteristics across **8
 This codebase uses GEE to generate datasets and Python for analysis.
 
 **1. Vegetation Composition:** Calculated using ESA WorldCover 2020 (10m) for Tree Cover, Grassland, Cropland, Shrubland, and Total Vegetation.
+
 **2. Vegetation Structure:** Analysis of Leaf Area Index (LAI) from Sentinel-2 and Canopy Height from Meta Canopy Height (1m).
+
 **3. Temporal Analysis:** Tracking 30-year shifts (1990–2020) using Landsat-based Global Land Cover.
+
 
 ---
 
