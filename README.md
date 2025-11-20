@@ -2,14 +2,9 @@
 
 **Authors:** Rohit Mukherjee, T.C. Chakraborty
 
-Data
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17644251.svg)](https://doi.org/10.5281/zenodo.17644251)
-
-Code
-
-[![DOI](https://zenodo.org/badge/1099114327.svg)](https://doi.org/10.5281/zenodo.17664383)
-
+**Data:** [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17644251.svg)](https://doi.org/10.5281/zenodo.17644251)
+<br>
+**Code:** [![DOI](https://zenodo.org/badge/1099114327.svg)](https://doi.org/10.5281/zenodo.17664383)
 
 ## Overview
 This repository contains the Google Earth Engine (GEE) and Python code for the study **"Global urban-rural contrasts in vegetation amount, subtype, and structure modulated by background climate and socioeconomic conditions"**.
@@ -32,7 +27,6 @@ This codebase uses GEE to generate datasets and Python for analysis.
 **2. Vegetation Structure:** Analysis of Leaf Area Index (LAI) from Sentinel-2 and Canopy Height from Meta Canopy Height (1m).
 
 **3. Temporal Analysis:** Tracking 30-year shifts (1990–2020) using Landsat-based Global Land Cover.
-
 
 ---
 
